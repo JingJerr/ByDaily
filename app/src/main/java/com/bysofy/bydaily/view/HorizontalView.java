@@ -1,4 +1,4 @@
-package com.bysofy.bydaily;
+package com.bysofy.bydaily.view;
 
 import android.content.Context;
 import android.os.AsyncTask;
