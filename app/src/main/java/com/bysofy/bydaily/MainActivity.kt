@@ -7,6 +7,9 @@ import android.widget.ListView
 import android.widget.TextView
 
 import android.view.View
+import com.bysofy.bydaily.design.decoratior.MathTeacher
+import com.bysofy.bydaily.design.decoratior.PeTeacher
+import com.bysofy.bydaily.design.decoratior.Student
 import com.bysofy.bydaily.design.proxyLsn.ByRelSub
 import com.bysofy.bydaily.design.proxyLsn.IShop
 import com.bysofy.bydaily.design.proxyLsn.ProxyEr
@@ -21,6 +24,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initProxy()
+        initAdapter()
+        initDecorator()
+    }
+
+    private fun initDecorator() {
+        val student = Student()
+        val mathTeacher = MathTeacher(student)
+        val peTeacher = PeTeacher(student)
+        mathTeacher.attackMagic()
+        peTeacher.attackMagic()
+    }
+
+    private fun initAdapter() {
         lv_one = findViewById<View>(R.id.lv_one) as ListView
         lv_two = findViewById<View>(R.id.lv_two) as ListView
         val strs1 =
